@@ -8,7 +8,7 @@ public class APITest extends JavaPlugin
     public void onEnable()
 	{
 		//Registering the listener that contains the PluginEnableEvent to check if
-		//TabDeco has been loaded
+		//TabDeco and factions have been loaded
 		getServer().getPluginManager().registerEvents(new PluginEnableListener(this), this);
 	}
 }
