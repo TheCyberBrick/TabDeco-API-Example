@@ -27,7 +27,7 @@ public class PluginEnableListener implements Listener
 			//Checking if TabDeco and Factions has been loaded
 	        if (tabDeco != null && factions != null) 
 	        {
-	        	//If TabDeco has been loaded, then register your new setting
+	        	//If TabDeco and factions has been loaded, then register your new setting
 	        	//1 Argument is the name of the setting in the configuration
 	        	//2 Argument is your class extending TabDecoSetting, which contains
 	        	//the function that sets the text of the slot
