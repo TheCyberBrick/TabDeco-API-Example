@@ -1,8 +1,13 @@
 package APITest.APITest;
 
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import TCB.TabDeco.API.TabDecoSetting;
+
+import com.massivecraft.factions.Board;
+import com.massivecraft.factions.FLocation;
+import com.massivecraft.factions.Faction;
 
 public class APITestClass extends TabDecoSetting
 {
@@ -10,11 +15,11 @@ public class APITestClass extends TabDecoSetting
 	@Override
 	public String getSlotText(Player player, String inputText) 
 	{
-		//This just returns the name of the player with 'Test ' in
-		//front of it. You can do whatever you want in this function.
-		//For example getting information from the internet or
-		//make a timer.
-		String text = "Test " + player.getDisplayName();
-		return text;
+		//Getting the location of the player
+		Location playerLocation = player.getLocation();
+		//Getting the faction at the location of the player
+		Faction faction = Board.getFactionAt(new FLocation(playerLocation));
+		//Returning the faction name
+		return faction.getTag();
 	}
 }

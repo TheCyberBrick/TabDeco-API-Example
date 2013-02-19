@@ -21,15 +21,18 @@ public class PluginEnableListener implements Listener
 	{
 		try
 		{
+			Plugin factions = plugin.getServer().getPluginManager().getPlugin("Factions");
 			Plugin tabDeco = plugin.getServer().getPluginManager().getPlugin("TabDeco");
 	
-			//Checking if TabDeco has been loaded
-	        if (tabDeco != null) 
+			//Checking if TabDeco and Factions has been loaded
+	        if (tabDeco != null && factions != null) 
 	        {
 	        	//If TabDeco has been loaded, then register your new setting
 	        	//1 Argument is the name of the setting in the configuration
 	        	//2 Argument is your class extending TabDecoSetting, which contains
 	        	//the function that sets the text of the slot
+	        	//The name of the setting in the configuration would be in this case
+	        	//[apitest] (The plugin automatically adds the [])
 	        	TabDecoRegistry.registerNewSetting("apitest", new APITestClass());
 	        }
 		}
